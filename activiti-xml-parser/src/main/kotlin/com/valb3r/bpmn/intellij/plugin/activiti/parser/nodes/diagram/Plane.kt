@@ -11,7 +11,7 @@ import org.mapstruct.Mapper
 // https://github.com/FasterXML/jackson-dataformat-xml/issues/363
 // unfortunately this has failed with Kotlin 'data' classes
 data class Plane(
-        @JacksonXmlProperty(isAttribute = true) val id: String,
+        @JacksonXmlProperty(isAttribute = true) val id: String = "",
         @JacksonXmlProperty(isAttribute = true) val bpmnElement: String,
         // variable name sensitive
         @JsonMerge @JacksonXmlProperty(localName = "BPMNShape") @JacksonXmlElementWrapper(useWrapping = false) val bpmnShape: List<Shape>?,
